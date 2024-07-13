@@ -1,2 +1,3 @@
 # album-video
-Album Video Client
+Album Video Client 
+by krafta.
