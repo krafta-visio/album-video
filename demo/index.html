@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+	<style>
+		.logo {
+			position: fixed;
+			top: 50px; /* Jarak dari atas */
+			right: 50px; /* Jarak dari kanan */
+			z-index: 1000; /* Jika ada elemen lain yang overlay, pastikan logo tetap di atasnya */
+		}
+	</style>
+	
+	<script>
+	const numberOfItems = 1;
+	</script>
+	
+	<script src='script1.js'></script>
+	
+</head>
+<body>
+	<img id='logo' height='60px' src='logo.png'/>
+	<a-scene mindar-image="imageTargetSrc: foto-1.mind; autoStart: true;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+		<a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="near: 10; far: 10000; objects: .clickable"></a-camera>
+		<a-assets id="video-assets"></a-assets>
+	</a-scene>
+	<script src='script2.js'></script>
+</body>
+</html>
