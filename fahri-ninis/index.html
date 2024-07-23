@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <title></title>    
+    <style>
+        body { margin: 0; overflow: hidden; }
+        a-scene { width: 100vw; height: 100vh; }
+		#logo { position: absolute; top: 10px; right: 10px; width: 80px; height: auto; }
+    </style>
+</head>
+<body>
+	<img src="logo.png" alt="Logo" id="logo">
+    <a-scene 
+        mindar-image="imageTargetSrc: targets.mind; autoStart: true; maxTrack: 1" 
+        color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
+        vr-mode-ui="enabled: false" 
+        device-orientation-permission-ui="enabled: false"
+        mindar-settings="smoothFactor: 0.1">
+        <a-camera 
+			position="0 0 0" 
+			look-controls="enabled: false" 
+			cursor="fuse: false; rayOrigin: mouse;" 
+			raycaster="near: 10; far: 10000; objects: .clickable">
+		</a-camera>
+        <a-assets></a-assets>
+    </a-scene>
+    <script src='scripts.js'></script>
+</body>
+</html>
